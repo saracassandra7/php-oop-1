@@ -2,14 +2,14 @@
 
 class Movie{
   public $title;
-  public $genre;
+  public $genre = [];
   public $poster;
   public $year;
   public $director;
 
   /**
    * @param String $title
-   * @param String $genre
+   * @param Array $genre
    * @param Number $year
    * @param String $director
    */
@@ -25,6 +25,18 @@ class Movie{
   public function setPoster($_poster)
   {
     $this->poster = $_poster;
+  }
+
+  public function getPoster()
+  {
+
+    $placeholder = "https://www.bilderwelten.it/assets/placeholder.jpg";
+    if ($this->poster) {
+      return $this->poster;
+    } else{
+      return $placeholder;
+    }
+
   }
 }
 
